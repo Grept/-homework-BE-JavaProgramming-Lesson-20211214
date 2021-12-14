@@ -1,5 +1,9 @@
 package nl.novi.javaprogrammeren;
 
+import nl.novi.javaprogrammeren.overerving.*;
+
+import java.util.ArrayList;
+
 public class AnimalMain {
     /*
     Het is traditie om overerving uit te leggen met behulp van dieren. Hier ontkomen jullie dus ook niet aan.
@@ -34,4 +38,38 @@ public class AnimalMain {
 
      */
 
+    public static void main(String[] args) {
+        Lion lionOne = new Lion("Mufasa", Gender.MALE);
+
+        lionOne.move();
+        lionOne.sleep();
+        lionOne.eat("beans");
+
+        Tiger tigerOne = new Tiger("Tom", Gender.MALE);
+
+        tigerOne.move();
+        tigerOne.sleep();
+        tigerOne.eat("Chicken");
+        System.out.println("Tiger " + tigerOne.getName() + " is a " + tigerOne.getGender());
+
+        Dog dogOne = new Dog("Schnauzer", "Bibi", Gender.FEMALE);
+
+        dogOne.makeSound();
+
+        ArrayList<Animal> animals = new ArrayList<>();
+
+        animals.add(lionOne);
+        animals.add(tigerOne);
+        animals.add(dogOne);
+
+        System.out.println("\n");
+
+        for (Animal a : animals){
+            System.out.println(a.getName());
+        }
+
+
+    }
 }
+
+
